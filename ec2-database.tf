@@ -1,9 +1,4 @@
 
-resource "ibm_is_ssh_key" "keypair1" {
-  key_name   = "${var.stack}-keypairs"
-  public_key = file(var.ssh_key)
-}
-
 data "template_file" "phpconfig" {
   template = file("files/conf.wp-config.php")
 
@@ -39,7 +34,6 @@ resource "aws_instance" "ec2" {
     aws_db_instance.mysql,
   ]
 
-  key_name                    = ibm_is_ssh_key.keypair1.key_name
   vpc_security_group_ids      = [aws_security_group.web.id]
   subnet_id                   = aws_subnet.public1.id
   associate_public_ip_address = true
