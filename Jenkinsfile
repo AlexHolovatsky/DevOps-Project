@@ -19,6 +19,11 @@ pipeline {
                 sh 'terraform init'
             }
         }
+        stage('Prov') {
+            steps {
+                sh 'terraform providers'
+            }
+        }
         stage('Plan') {
             steps {
                 sh 'terraform plan'
