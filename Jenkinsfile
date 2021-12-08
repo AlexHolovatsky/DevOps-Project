@@ -14,11 +14,6 @@ pipeline {
           }
         }
         
-        stage('Prov') {
-            steps {
-                sh 'terraform providers'
-            }
-        }   
         
         stage('Init') {
             steps {
