@@ -9,9 +9,9 @@ terraform {
     template = {
       source  = "hashicorp/template"
       version = "~> 2.1.2"
+    }
           ibm = {
       source = "ibm-cloud/ibm"
-    }
     }
   }
 }
