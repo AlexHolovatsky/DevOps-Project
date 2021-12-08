@@ -39,7 +39,7 @@ resource "aws_instance" "ec2" {
     aws_db_instance.mysql,
   ]
 
-  key_name                    = aws_key_pair.keypair1.key_name
+  key_name                    = ibm_is_ssh_key.keypair1.key_name
   vpc_security_group_ids      = [aws_security_group.web.id]
   subnet_id                   = aws_subnet.public1.id
   associate_public_ip_address = true
