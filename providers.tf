@@ -9,14 +9,9 @@ terraform {
     template = {
       source  = "hashicorp/template"
       version = "~> 2.1.2"
-    }
-  }
-}
-
-terraform {
-  required_providers {
-    ibm = {
+          ibm = {
       source = "ibm-cloud/ibm"
+    }
     }
   }
 }
