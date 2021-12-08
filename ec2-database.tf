@@ -1,5 +1,5 @@
 
-resource "aws_key_pair" "keypair1" {
+resource "ibm_is_ssh_key" "keypair1" {
   key_name   = "${var.stack}-keypairs"
   public_key = file(var.ssh_key)
 }
